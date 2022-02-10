@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" %>
+<%@ Import Namespace="System" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="CNRST.classes" %>
+<script runat="server">
+    connexion c = new connexion();
+    DataTable dtNav;
+    DataSet ds;
+    protected void Page_Load(object sender, EventArgs e)
+    {   if (!IsPostBack)
+        {   dtNav = new DataTable();
+            try {
+                dtNav = c.SelectQueries("Select * From Dev.Navbar");
+                ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter();
+                for (int i=0; i<dtNav.Rows.Count; i++)
+                {
+                    da.SelectCommand = new SqlCommand("select * from Dev.SubLinks where Menu = '" + dtNav.Rows[i][1] + "'", c.cx);
+                    da.Fill(ds, "Navbar" + dtNav.Rows[i][1]);
+                }
+            }
+            catch (Exception ex) { }
+        }
+    }
+    protected void ButtonSearch_Click(object sender, EventArgs e)
+    {
+        Session["search"] = SearchField.Value;
+        Response.Redirect("search.aspx");
+    }
+</script>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>CNRST</title>
+    <link rel="icon" href="logo.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&amp;display=swap" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="mainForm" runat="server" method="post">
+        <div>
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <h1><a href="accueil.aspx"><img src="/logo.svg" />CNRST</a></h1>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="SearchField" runat="server" name="search" placeholder="Recherche..." />
+                    <a>
+                        <img src="/icons/search.svg" />
+                        <asp:Button ID="ButtonSearch" runat="server" CssClass="search" OnClick="ButtonSearch_Click" />
+                    </a>
+                </div>
+                <div class="langue"><a href="#">
+                    <img src="/icons/morocco.svg" /></a><a href="#"><img src="/icons/france.svg" /></a></div>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <div class="bars"><img class="bars-icon" src="../icons/menu.svg"/>
+                  <ul class="nav">
+                    <li><a href="accueil.aspx">Accueil</a></li>
+                    <% for (int j = 0; j < dtNav.Rows.Count; j++) { %>
+                       <li data-sub='<%=dtNav.Rows[j][2] %>'><a><%=dtNav.Rows[j][1] %></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+                <ul class="nav">
+                    <li><a href="/accueil.aspx"><img src="/icons/homepage.svg" /></a></li>
+                    <% for (int i = 0; i < dtNav.Rows.Count; i++) { %>
+                       <li data-sub="<%=dtNav.Rows[i][2] %>"><a><%=dtNav.Rows[i][1] %></a></li>
+                    <% } %>
+                </ul>
+                <section class="sublinks">
+                    <aside>
+                        <div class="x">
+                            <img src="../icons/close.svg" />
+                        </div>
+                        <% for (int i = 0; i < dtNav.Rows.Count; i++) { %>
+                           <% string s = "Navbar" + dtNav.Rows[i][1].ToString(); %>
+                           <ul class="links" id="<%=dtNav.Rows[i][2].ToString() %>">
+                           <% for (int j = 0; j < ds.Tables[s].Rows.Count; j++) { %> 
+                              <li><a href="<%=ds.Tables[s].Rows[j][2] %>"><%=ds.Tables[s].Rows[j][1] %></a></li>
+                           <% } %>
+                           </ul>
+                        <% } %>
+                    </aside>
+                </section>
+            </div>
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder_" runat="server">
+        </asp:ContentPlaceHolder>
+        <button class="up"><img src="/icons/up.svg" /></button>
+        <footer>
+            <div class="contact">
+                <div class="container">
+                    <div class="cnrst">
+                        <h3>
+                            <img src="/logo.svg" />CNRST</h3>
+                        <ul>
+                            <li>
+                                <img src="/icons/map.svg" />
+                                <p>Av. Angle Allal Al Fassi et Av. des FAR, Hay Ryad, BP. 8027 10102 Rabat, Maroc Rabat 8027</p>
+                            </li>
+                            <li>
+                                <img src="/icons/chat.svg" />contact@cnrst.com</li>
+                            <li>
+                                <img src="/icons/phone.svg" />(+212) 05 37.56.98.00</li>
+                            <li>
+                                <img src="/icons/phone.svg" />(+212) 05 37.56.98.34</li>
+                            <li><a href="#">
+                                <img src="/icons/http.svg" />https://www.cnrst.ma</a></li>
+                        </ul>
+                    </div>
+                    <div class="liens">
+                        <h4>Liens</h4>
+                        <ul>
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">CNRST</a></li>
+                            <li><a href="#">Unités et services</a></li>
+                            <li><a href="#">Financement de la recherche</a></li>
+                            <li><a href="#">Informations</a></li>
+                            <li><a href="#">Publications</a></li>
+                        </ul>
+                    </div>
+                    <div class="apropos">
+                        <h4>a propos</h4>
+                        <article>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio pariatur dolore quos dolor eos numquam repellat unde illo deleniti? Officia unde saepe minima iusto aspernatur fugiat nam quae, iste nulla blanditiis! Dolores magnam modi nihil provident recusandae quo! Sit reiciendis explicabo commodi repellendus expedita.
+             
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores ipsa nam inventore, voluptatibus in accusantium, asperiores mollitia, quaerat ipsum nihil doloremque odit!</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">
+                <div class="container">
+                    <p>&copy; Copyright <strong>CNRST</strong>. All Rights Reserved<span>Designed by Younes &amp; Youssef &amp; Mustapha.</span></p>
+                    <div class="social">
+                        <a href="#"><img src="/icons/facebook.svg" /></a>
+                        <a href="#"><img src="/icons/linkedin.svg" /></a>
+                    </div>
+                    <div class="settings">
+                        <a href="development.aspx"><img src="icons/settings.svg" /></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+    </form>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

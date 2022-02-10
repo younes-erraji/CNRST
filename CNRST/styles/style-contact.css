@@ -1,0 +1,110 @@
+main .contact {
+  padding: 44px 0;
+}
+main .contact .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+main .contact .container .info h2 {
+  color: #353535;
+}
+main .contact .container .info p {
+  color: #6a6e71;
+  margin-left: 38px;
+  line-height: 1.7;
+}
+main .contact .container .info p img {
+  width: 2.2rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline: 8px;
+}
+main .contact .container .info p:not(:first-of-type) {
+  font-size: 22px;
+}
+main .contact .container .mform p {
+  color: #6a6e71;
+  width: 85%;
+  line-height: 1.7;
+  font-size: 1.8rem;
+}
+main .contact .container .mform label {
+  display: inline-block;
+  color: #3f3f3f;
+  font-weight: bold;
+  margin: 10px 0;
+}
+main .contact .container .mform input:not([type=checkbox]) {
+  background-color: #4b5557;
+  display: block;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  width: 88%;
+  margin-bottom: 10px;
+}
+main .contact .container .mform input[type=checkbox] {
+  appearance: none;
+}
+main .contact .container .mform input[type=checkbox]:checked + label:after {
+  transform: scale(1);
+}
+main .contact .container .mform input[type=checkbox] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 34px;
+}
+main .contact .container .mform input[type=checkbox] + label:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  border: 1px solid #5a5a5a;
+  position: absolute;
+  left: 0;
+  top: -3px;
+}
+main .contact .container .mform input[type=checkbox] + label:after {
+  content: url("../icons/check.svg");
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #2980b9;
+  border: 1px solid #2980b9;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+}
+main .contact .container .mform textarea {
+  display: block;
+  background-color: #4b5557;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 300px;
+  resize: vertical;
+}
+main .contact .container .mform .submit.button {
+  display: block;
+  background-color: #191e22;
+  color: #fff;
+  padding: 10px 20px;
+  border: 0;
+  margin-top: 10px;
+  cursor: pointer;
+}
+@media (max-width: 575.98px) {
+  main .contact .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 767.98px) {
+  main .contact .container .mform input:not([type=submit]) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,61 @@
+﻿main {
+    margin: 88px 8px;
+}
+
+    main .container h2 {
+        margin-bottom: 66px;
+        font-size: 36px;
+    }
+
+    main .container .front-end,
+    main .container .back-end {
+        display: flex;
+        padding: 0 22px;
+        margin: 44px 0 66px;
+    }
+
+        main .container .front-end .developer,
+        main .container .back-end .developer {
+            display: grid;
+            grid-template-rows: auto  auto 1fr auto;
+            grid-row-gap: 18px;
+            width: 60%;
+            padding: 4px 22px 4px 22px;
+        }
+
+            main .container .front-end .developer h3,
+            main .container .front-end .developer h4,
+            main .container .back-end .developer h4,
+            main .container .back-end .developer h3 {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 0 0 18px 0;
+            }
+
+            main .container .front-end .developer p,
+            main .container .back-end .developer p {
+                line-height: 1.7;
+            }
+
+            main .container .front-end .developer .social,
+            main .container .back-end .developer .social {
+                font-size: 24px;
+                padding: 22px 22px 0;
+            }
+
+                main .container .front-end .developer .social img,
+                main .container .back-end .developer .social img {
+                    width: 44px;
+                    height: 44px;
+                    cursor: pointer;
+                }
+
+        main .container .front-end .picture,
+        main .container .back-end .picture {
+            width: 40%;
+        }
+
+            main .container .front-end .picture img,
+            main .container .back-end .picture img {
+                width: 100%;
+            }

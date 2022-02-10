@@ -1,0 +1,108 @@
+﻿main .container .select, main .container hr, main .container table, main .container .edit {
+    width: 78%;
+    margin: 2rem auto;
+}
+
+main .container .select {
+    display: flex;
+    flex-direction: column;
+}
+
+    main .container .select h2 {
+        margin: 0;
+        padding: 4px 0;
+    }
+
+    main .container .select select {
+        padding: .6rem;
+        font-size: 22px;
+    }
+
+main .container hr {
+    border: 4px solid #ff6a00;
+}
+
+main .container table {
+    text-align: center;
+}
+
+    main .container table td, main .container table th {
+        padding: .7rem;
+    }
+
+main .container .edit .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+    main .container .edit .row button {
+        display: block;
+        font-size: 2rem;
+        background-color: #191e22;
+        color: #fff;
+        opacity: .7;
+        margin-bottom: 8px;
+        padding: 10px;
+        border: 0;
+        margin-top: 12px;
+        cursor: pointer;
+        transition: opacity .8s linear;
+    }
+
+        main .container .edit .row button.selected {
+            background-color: #DDD;
+            color: #444;
+            margin-bottom: 0;
+        }
+
+        main .container .edit .row button:hover {
+            opacity: 1;
+        }
+
+main .container .edit .content section {
+    display: none;
+    text-align: center;
+    background-color: #DDD;
+    color: #444;
+    padding: 8px;
+}
+
+    main .container .edit .content section.active {
+        display: block;
+    }
+
+    main .container .edit .content section table tr {
+        display: grid;
+        grid-template-columns: 38% auto;
+        grid-gap: 8px;
+        align-items: center;
+        width: 100%;
+    }
+
+        main .container .edit .content section table tr td input:not([type="submit"]), main .container .edit .content section table tr td select {
+            display: block;
+            width: 100%;
+            font-size: 2rem;
+            background-color: #fff;
+            padding: 10px;
+            border: 0;
+        }
+
+        main .container .edit .content section table tr td input[type="submit"] {
+            width: 60%;
+            display: block;
+            background-color: cornflowerblue;
+            color: #fff;
+            padding: 10px 20px;
+            border: 0;
+            float: right;
+            cursor: pointer;
+        }
+
+@media (max-width: 991.98px) {
+    main .container .select, main .container hr, main .container table, main .container .edit {
+        width: 98%;
+        margin: 2rem auto;
+    }
+}

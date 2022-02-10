@@ -1,0 +1,65 @@
+﻿.container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 18px;
+}
+.container table {
+    font-size: 1.8rem;
+    width: 100%;
+}
+.container table tr {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 22px;
+    align-items: center;
+    padding: 8px;
+    margin: 8px 0;
+}
+    .container table tr th {
+        font-size: 2.2rem;
+        text-align: left;
+    }
+    .container table tr td input:not([type='submit']), table tr td select {
+        display: block;
+        width: 88%;
+        background-color: #4b5557;
+        color: #fff;
+        padding: 10px;
+        border: 0;
+        margin-bottom: 10px;
+    }
+.container table tr td textarea {
+    display: block;
+    background-color: #4b5557;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 300px;
+    resize: vertical;
+}
+.container .verticale {
+    width: 8px;
+    height: 100%;
+    background-color: aqua;
+}
+    .container .buttons input[type='submit'] {
+        display: block;
+        font-size: 2.2rem;
+        background-color: #191e22;
+        color: #fff;
+        opacity: .7;
+        width: 180px;
+        padding: 10px;
+        border: 0;
+        margin-top: 12px;
+        cursor: pointer;
+        transition: opacity .8s linear;
+    }
+        .container .buttons input[type='submit']:last-of-type {
+            margin-bottom: 12px;
+        }
+        .container .buttons input[type='submit']:hover {
+            opacity: 1;
+        }
