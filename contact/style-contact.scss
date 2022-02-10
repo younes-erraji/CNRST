@@ -1,0 +1,132 @@
+@import "../frameworks/navbar";
+main {
+  .contact {
+    padding: 44px 0;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      .info {
+        h2 {
+          color: #353535;
+        }
+        p {
+          color: #6a6e71;
+          margin-left: 38px;
+          line-height: 1.7;
+          img {
+            width: 2.2rem;
+            display: inline-block;
+            vertical-align: middle;
+            margin-inline: 8px;
+          }
+          &:not(:first-of-type) {
+            font-size: 22px;
+          }
+        }
+      }
+      form {
+        p {
+          color: #6a6e71;
+          width: 85%;
+          line-height: 1.7;
+          font-size: 1.8rem;
+        }
+        label {
+          display: block;
+          color: #3f3f3f;
+          font-weight: bold;
+          margin: 10px 0;
+        }
+        input:not([type="submit"]):not([type="checkbox"]) {
+          background-color: #4b5557;
+          color: #fff;
+          padding: 10px;
+          border: 0;
+          width: 88%;
+          margin-bottom: 10px;
+        }
+        input[type="checkbox"] {
+          appearance: none;
+          &:checked + label {
+            &:after {
+              transform: scale(1);
+            }
+          }
+        }
+        input[type="checkbox"] + label {
+          display: inline-block;
+          position: relative;
+          cursor: pointer;
+          padding-left: 34px;
+          &:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: #eee;
+            border: 1px solid #5a5a5a;
+            position: absolute;
+            left: 0;
+            top: -3px;
+          }
+          &:after {
+            content: url("../icons/check.svg");
+            position: absolute;
+            top: -3px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #2980b9;
+            border: 1px solid #2980b9;
+            transform: scale(0);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+        textarea {
+          display: block;
+          background-color: #4b5557;
+          color: #fff;
+          padding: 10px;
+          border: 0;
+          width: 100%;
+          margin-bottom: 10px;
+          height: 300px;
+          resize: vertical;
+        }
+        input[type="submit"] {
+          display: block;
+          background-color: #191e22;
+          color: #fff;
+          padding: 10px 20px;
+          border: 0;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@import "../frameworks/footer";
+@media (max-width: 575.98px) {
+  main {
+    .contact {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  main {
+    .contact {
+      .container {
+        form {
+          input:not([type="submit"]),
+          textarea {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

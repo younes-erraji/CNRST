@@ -1,0 +1,78 @@
+mixin navbar
+  header
+    .container
+      .logo: h1: a(href='../accueil/index.html')
+        img(src='../logo.svg')
+        |CNRST
+      .search-box
+        input(type="text" name="search" placeholder="Recherche...")
+        a(href="#"): img(src="../icons/search.svg")
+      .langue
+        a(href='#'): img(src='../icons/morocco.svg')
+        a(href='#'): img(src='../icons/france.svg')
+  nav
+    .container
+      .bars
+        img.bars-icon(src="../icons/menu.svg")
+        ul.nav
+          li: a(href='../accueil/index.html') Accueil
+          li(data-sub='cnrst'): a CNRST
+          li(data-sub='services'): a Unités et services
+          li(data-sub='financement'): a Financement
+          li(data-sub='informations'): a Informations
+          li(data-sub='publications'): a Publications
+      ul.nav
+        li: a(href='../accueil/index.html'): img(src='../icons/homepage.svg')
+        li(data-sub='cnrst'): a CNRST
+        li(data-sub='services'): a Unités et services
+        li(data-sub='financement'): a Financement
+        li(data-sub='informations'): a Informations
+        li(data-sub='publications'): a Publications
+      section.sublinks
+        aside
+          .x: img(src='../icons/close.svg')
+          ul.links#cnrst
+            strong A Propos
+            li: a(href='#') Présentation
+            li: a(href='#') Mot de la Directrice
+            li: a(href='#') Organigramme
+            li: a(href='#') Stratégie 2018-2022
+            li: a(href='#') CNRST en chiffres
+            strong Conseil d'administration
+            li: a(href='#') Textes réglementaires
+            li: a(href='#') Membres du conseil
+            li: a(href='#') Comptes rendus
+            li: a(href='#') Résolutions
+          ul.links#services
+            strong Pôle mutualisation 
+            li: a(href='#') IMIST
+            li: a(href='#') UATRS
+            li: a(href='#') CCMM
+            li: a(href='#') MARWAN
+            li: a(href='#') ING
+            strong Pôle moyen et appui à la recherche
+            li: a(href='#') Programmes scientifiques 
+            li: a(href='#') Coopération
+            li: a(href='#') Relations avec la communauté de chercheurs marocains à l’étranger
+            li: a(href='#') Bourses de recherche
+          ul.links#financement
+            strong Programmes nationaux
+            li: a(href='#') Financement des projets de recherche 
+            li: a(href='#') Financement des structures d’excellence 
+            li: a(href='#') Soutien à la publication d’ouvrages scientifiques
+            strong Appels à projets internationaux
+            li: a(href='#') Coopération internationale
+            strong Bourses d'excellence
+            li: a(href='#') Appel à candidature 
+            li: a(href='#') Rapport d’étape et annuels
+          ul.links#informations
+            li: a(href='#') CNRST en média
+            li: a(href='#') Evénements
+            li: a(href='#') CNRST recrute
+            li: a(href='#') Appels d'offres
+            li: a(href='#') Certification des copies
+            li: a(href='#') Droit d'accès à l'information
+          ul.links#publications
+            li: a(href='#') Rapports d'activités
+            li: a(href='#') Bilans et Etudes
+            li: a(href='#') Newsletter

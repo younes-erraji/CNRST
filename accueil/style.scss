@@ -1,0 +1,295 @@
+@import "../frameworks/navbar";
+main {
+  section {
+    padding: 0 0 44px;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      .primary {
+        width: 100%;
+        height: 374px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        section {
+          width: 60%;
+          height: 100%;
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            object-position: center center;
+          }
+          a {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 2rem;
+            line-height: 1.7;
+            padding: 8px 8px 8px 22px;
+            height: 100%;
+            width: 68%;
+            letter-spacing: 1.8px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 4;
+            background: linear-gradient(
+              to right,
+              hsl(0, 0%, 0%) 0%,
+              hsla(0, 0%, 0%, 0.964) 7.4%,
+              hsla(0, 0%, 0%, 0.918) 15.3%,
+              hsla(0, 0%, 0%, 0.862) 23.4%,
+              hsla(0, 0%, 0%, 0.799) 31.6%,
+              hsla(0, 0%, 0%, 0.73) 39.9%,
+              hsla(0, 0%, 0%, 0.655) 48.2%,
+              hsla(0, 0%, 0%, 0.577) 56.2%,
+              hsla(0, 0%, 0%, 0.497) 64%,
+              hsla(0, 0%, 0%, 0.417) 71.3%,
+              hsla(0, 0%, 0%, 0.337) 78.1%,
+              hsla(0, 0%, 0%, 0.259) 84.2%,
+              hsla(0, 0%, 0%, 0.186) 89.6%,
+              hsla(0, 0%, 0%, 0.117) 94.1%,
+              hsla(0, 0%, 0%, 0.054) 97.6%,
+              hsla(0, 0%, 0%, 0) 100%
+            );
+          }
+        }
+        article {
+          position: relative;
+          width: 38%;
+          p {
+            color: #636e72;
+            text-align: justify;
+            line-height: 1.7;
+            font-size: 1.8rem;
+          }
+        }
+      }
+      div:not(.primary) {
+        margin-top: 14px;
+        width: 24%;
+        height: 220px;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        box-shadow: 4px 4px 8px #878787;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+          position: absolute;
+          left: 0;
+          top: 0;
+          transition: transform 1s;
+        }
+        a {
+          position: relative;
+          z-index: 2;
+          display: block;
+          color: #fff;
+          font-size: 1.5rem;
+          line-height: 1.6;
+          background: linear-gradient(
+            to top,
+            hsl(0, 0%, 0%) 0%,
+            hsla(0, 0%, 0%, 0.964) 7.4%,
+            hsla(0, 0%, 0%, 0.918) 15.3%,
+            hsla(0, 0%, 0%, 0.862) 23.4%,
+            hsla(0, 0%, 0%, 0.799) 31.6%,
+            hsla(0, 0%, 0%, 0.73) 39.9%,
+            hsla(0, 0%, 0%, 0.655) 48.2%,
+            hsla(0, 0%, 0%, 0.577) 56.2%,
+            hsla(0, 0%, 0%, 0.497) 64%,
+            hsla(0, 0%, 0%, 0.417) 71.3%,
+            hsla(0, 0%, 0%, 0.337) 78.1%,
+            hsla(0, 0%, 0%, 0.259) 84.2%,
+            hsla(0, 0%, 0%, 0.186) 89.6%,
+            hsla(0, 0%, 0%, 0.117) 94.1%,
+            hsla(0, 0%, 0%, 0.054) 97.6%,
+            hsla(0, 0%, 0%, 0) 100%
+          );
+          padding: 2px;
+        }
+        &:hover {
+          img {
+            transform: scale(1.2, 1.2);
+          }
+        }
+      }
+    }
+  }
+  .articles {
+    padding: 48px 0;
+    background-color: rgba(220, 220, 220, 0.2);
+    .container {
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        h3 {
+          width: 100%;
+          margin-top: 0;
+          font-size: 2.2rem;
+          letter-spacing: 1px;
+          overflow: hidden;
+          position: relative;
+          font-family: Itim, Poppins, Arial;
+          strong {
+            background-color: #f8f8f8;
+            position: relative;
+            padding-right: 14px;
+            z-index: 2;
+          }
+          &:after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: tomato;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(-50%);
+            z-index: 1;
+          }
+        }
+        article {
+          width: 48.8%;
+          padding: 8px 10px;
+          h4 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 0.8px;
+            margin: 4px 0;
+            a {
+              color: #000;
+            }
+          }
+          p {
+            padding: 0;
+            margin: 12px 0;
+            color: #4f5658;
+            display: -webkit-box;
+            display: box;
+            width: 100%;
+            height: 1.6rem * 1.4 * 3;
+            font-size: 1.6rem;
+            line-height: 1.4;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+        &:not(:first-child) {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+  @import "../frameworks/photo";
+  .contact {
+    background-color: rgba(220, 220, 220, 0.2);
+    padding: 28px 0;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 18px;
+      p {
+        line-height: 1.7;
+        font-size: 22px;
+        color: #636e72;
+      }
+      a {
+        background-color: #086ad8;
+        color: rgb(255 255 255 / 0.7);
+        font-size: 22px;
+        padding: 16px 22px;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        transition: color 0.4s;
+        &:hover {
+          color: rgb(255 255 255);
+        }
+      }
+    }
+  }
+}
+@import "../frameworks/footer";
+@media (max-width: 575.98px) {
+  main {
+    section {
+      .container {
+        div:not(.primary) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  main {
+    .articles {
+      .container {
+        div {
+          article {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  main {
+    .contact {
+      .container {
+        grid-template-columns: 1fr;
+        justify-content: center;
+      }
+    }
+  }
+  main {
+    section {
+      .container {
+        .primary {
+          flex-direction: column;
+          section {
+            width: 100%;
+          }
+          article {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  main {
+    section {
+      .container {
+        div:not(.primary) {
+          width: 48%;
+        }
+      }
+    }
+  }
+}

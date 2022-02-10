@@ -1,0 +1,39 @@
+include ../frameworks/head
+include ../frameworks/navbar
+include ../frameworks/footer
+doctype html
+html
+  head
+    +head('Contact', 'style-contact.css')
+  body
+    +navbar
+    main
+      .contact
+        .container
+          .info
+            h2.header Contact
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iusto repudiandae harum placeat sequi, illo incidunt tempora nemo modi alias. Esse quaerat consectetur reprehenderit dolorum nisi blanditiis, dolorem illo ipsa perspiciatis facere officiis quisquam magnam odio eaque eos sapiente nemo repudiandae error eius dicta.
+            p
+              img(src='../icons/chat.svg')
+              |contact@cnrst.com
+            p
+              img(src='../icons/phone.svg')
+              |(+212) 05 37.56.98.00
+            p
+              img(src='../icons/phone.svg')
+              |(+212) 05 37.56.98.34
+          form
+            p Envoyer un e-mail. Tous les champs marqués d'un astérisque * sont obligatoires.
+            label(for='nom') Nom *
+            input(type="text" id='nom')
+            label(for='email') Email Adresse *
+            input(type="email" id='email')
+            label(for='tele') Téle *
+            input(type="text" id='tele')
+            label(for='message') Message *
+            textarea(id='message')
+            .check
+              input(type='checkbox' id='check')
+              label(for='check') Envoyer une copie à votre adresse
+            input(type="submit" value="Envoyer")
+    +footer

@@ -1,0 +1,43 @@
+mixin photo
+  .phototheque
+    .container
+      h3.header Photothéque
+      .show
+        img.data(src="../images/studio/00.jpg")
+        img.exit(src="../icons/close.svg")
+      .img-content.active
+        ul
+          li: img(src="../images/studio/00.jpg")
+          li: img(src="../images/studio/00-min.jpg")
+          li: img(src="../images/studio/0.jfif")
+          li: img(src="../images/studio/0.png")
+          li: img(src="../images/studio/01.jpg")
+          li: img(src="../images/studio/1.webp")
+      .img-content
+        ul
+          li: img(src="../images/studio/02.jpg")
+          li: img(src="../images/studio/04-min.jpg")
+          li: img(src="../images/studio/01.jpg")
+          li: img(src="../images/studio/06.jpg")
+          li: img(src="../images/studio/07.jpg")
+          li: img(src="../images/studio/07-min.jpg")
+      .img-content
+        ul
+          li: img(src="../images/studio/08.jpg")
+          li: img(src="../images/studio/09.jpg")
+          li: img(src="../images/studio/09-min.jpg")
+          li: img(src="../images/studio/10.jpg")
+          li: img(src="../images/studio/12.jpg")
+          li: img(src="../images/studio/13.jpg")
+      .img-content
+        ul
+          li: img(src="../images/studio/00.jpg")
+          li: img(src="../images/studio/0.png")
+          li: img(src="../images/studio/02.jpg")
+          li: img(src="../images/studio/06.jpg")
+          li: img(src="../images/studio/08.jpg")
+          li: img(src="../images/studio/10.jpg")
+      section
+        span.slider.selected(data-index=0)
+        - for (let i=1; i<4; i++)
+          span.slider(data-index=i)
