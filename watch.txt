@@ -1,2 +1,2 @@
-pug "C:\Users\Younes\Desktop\CNRST" -w --pretty
-sass --watch "C:\Users\Younes\Desktop\CNRST"
+sass --watch C:\Users\Younes\Desktop\CNRST
+pug C:\Users\Younes\Desktop\CNRST -w --pretty
