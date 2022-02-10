@@ -1,0 +1,92 @@
+@import "../frameworks/normalize.css";
+@import "../frameworks/style-global";
+@import "../frameworks/style-header";
+main {
+  .contact {
+    background-color: #252f31;
+    padding: 50px 0;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      .info {
+        h2 {
+          color: #fff;
+        }
+        p {
+          color: #6a6e71;
+          margin-left: 38px;
+          line-height: 1.7;
+          img {
+            width: 20px;
+            display: inline-block;
+            margin-inline: 8px;
+          }
+          &:not(:first-of-type) {
+            font-size: 22px;
+          }
+        }
+      }
+      form {
+        label {
+          display: block;
+          color: #d1d6da;
+          margin: 10px 0;
+        }
+        input:not([type="submit"]) {
+          background-color: #4b5557;
+          color: #fff;
+          padding: 10px;
+          border: 0;
+          width: 85%;
+          margin-bottom: 10px;
+        }
+        textarea {
+          background-color: #4b5557;
+          color: #fff;
+          padding: 10px;
+          border: 0;
+          width: 85%;
+          margin-bottom: 10px;
+          height: 300px;
+          resize: vertical;
+        }
+        input[type="submit"] {
+          background-color: #191e22;
+          color: #fff;
+          padding: 10px 20px;
+          border: 0;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@import "../frameworks/style-footer";
+@media (max-width: 575.98px) {
+  main {
+    .contact {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  nav .container .links {
+    display: none;
+  }
+  main {
+    .contact {
+      .container {
+        form {
+          input:not([type="submit"]),
+          textarea {
+            width: 98%;
+          }
+        }
+      }
+    }
+  }
+}
